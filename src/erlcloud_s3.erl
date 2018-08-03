@@ -234,8 +234,8 @@ delete_objects_batch(Bucket, KeyList, Config) ->
     Headers = [{"content-type", "application/xml"},
                {"content-length", Len}],
 
-    Result = s3_request(Config, post, Bucket, "/", "delete", [{"delete", ""}], binary_to_list(iolist_to_binary(Payload)), Headers),
-    erlcloud_aws:http_headers_body(Result).
+    _ = s3_request(Config, post, Bucket, "/", "delete", [{"delete", ""}], binary_to_list(iolist_to_binary(Payload)), Headers),
+    ok.
 
 delete_objects_batch_timeout(#aws_config{timeout = undefined}) ->
     1000;
