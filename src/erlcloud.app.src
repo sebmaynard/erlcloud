@@ -3,7 +3,7 @@
 
 {application, erlcloud,
  [{description, "AWS APIs library for Erlang"},
-  {vsn, git},
+  {vsn, "3.2.2"},
   {registered, []},
   {applications, [stdlib,
                   kernel,
